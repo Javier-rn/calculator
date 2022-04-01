@@ -23,3 +23,27 @@ function divide(a, b) {
 function operate(operator, a, b) {
     return operator(a, b);
 }
+
+let displayValue = '';
+
+let num1 = '';
+let num2 = '';
+
+allBtns.forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+        if (e.target.id === 'add') {
+            displayValue += ' + ';
+        } else if (e.target.id === 'subtract') {
+            displayValue += ' - ';
+        } else if (e.target.id === 'multiply') {
+            displayValue += ' * ';
+        } else if (e.target.id === 'divide') {
+            displayValue += ' / ';
+        } else {
+            displayValue += e.target.id;
+        }
+        display.textContent = displayValue;
+
+        console.log(displayValue.split(''));
+    });
+});
