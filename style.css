@@ -3,6 +3,7 @@
 }
 
 body {
+    background-color: rgb(240, 240, 240);
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -14,10 +15,12 @@ body {
 }
 
 .container {
-    border: 1px solid black;
+    border: 3px solid #f1c0e8;
     border-radius: 10px;
+    background-color: rgba(238, 242, 247, 0.753);
     width: 450px;
-    height: 490px;
+    height: 520px;
+    font-size: 20px;
 }
 
 .btn {
@@ -29,12 +32,13 @@ body {
 }
 
 .display {
+    font-size: 24px;
     width: 100%;
     height: 30%;
-    border: 1px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 1s;
 }
 
 .bottom {
@@ -55,13 +59,93 @@ body {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
-    width: 25%;
+    width: 30%;
     height: auto;
 }
 
-.square {
-    border: 1px solid red;
-    padding: 20px;
-    margin: 12px;
-    border-radius: 5px;
+.operation {
+    background-color: #d5eff3;
+    cursor: pointer;
+    transition: all 0.3s;
 }
+
+.operation:hover {
+    background-color: #4a747a;
+}
+
+.square {
+    padding: 25px;
+    margin: 8px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.square:hover {
+    background-color: #d5eff3;
+}
+
+.div1,
+.div2,
+.div3,
+.div4,
+.div5 {
+    width: 700px;
+    height: 400px;
+    position: absolute;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.div1 {
+    background-color: #73c7cf;
+    top: -240px;
+    left: -10px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+        rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+        rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+.div2 {
+    background-color: rgb(150, 199, 154);
+    bottom: -270px;
+    right: -100px;
+    box-shadow: rgba(150, 199, 154, 0.4) -5px -5px,
+        rgba(150, 199, 154, 0.3) -10px -10px,
+        rgba(150, 199, 154, 0.2) -15px -15px,
+        rgba(150, 199, 154, 0.1) -20px -20px,
+        rgba(150, 199, 154, 0.05) -25px -25px;
+}
+
+.div3 {
+    width: 130px;
+    background-color: rgb(212, 176, 178);
+    bottom: -300px;
+    left: 100px;
+    box-shadow: rgba(212, 176, 178, 0.4) -5px -5px,
+        rgba(212, 176, 178, 0.3) -10px -10px,
+        rgba(212, 176, 178, 0.2) -15px -15px,
+        rgba(212, 176, 178, 0.1) -20px -20px,
+        rgba(212, 176, 178, 0.05) -25px -25px;
+}
+
+/* .div4 {
+    width: 100px;
+    height: 200px;
+    top: -100px;
+    right: 200px;
+    background-color: rgb(251, 248, 204);
+    box-shadow: rgba(251, 248, 204) 5px 5px, rgba(251, 248, 204, 0.3) 10px 10px,
+        rgba(251, 248, 204, 0.2) 15px 15px, rgba(251, 248, 204, 0.1) 20px 20px,
+        rgba(251, 248, 204, 0.05) 25px 25px;
+}
+
+.div5 {
+    width: 50px;
+    height: 200px;
+    top: -130px;
+    right: 100px;
+    background-color: rgb(212, 176, 178);
+    box-shadow: rgba(212, 176, 178, 0.4) 0px 5px,
+        rgba(212, 176, 178, 0.3) 0px 10px, rgba(212, 176, 178, 0.2) 0px 15px,
+        rgba(212, 176, 178, 0.1) 0px 20px, rgba(212, 176, 178, 0.05) 0px 25px;
+} */
