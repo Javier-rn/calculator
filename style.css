@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    border: 3px solid #f1c0e8;
+    border: 2px solid #7294a79a;
     border-radius: 10px;
     background-color: rgba(238, 242, 247, 0.753);
     width: 450px;
@@ -82,6 +82,11 @@ body {
 
 .square:hover {
     background-color: #d5eff3;
+}
+
+.clear,
+.equal {
+    cursor: pointer;
 }
 
 .div1,
