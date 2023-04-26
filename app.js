@@ -100,6 +100,8 @@ equalBtn.addEventListener('click', function (e) {
   const lastChar = calcText.charAt(calcText.length - 1);
   if (lastChar === ' ') {
     return calcText;
+  } else if (!(calcDisplay.textContent.split(' ').length === 3)) {
+    return calcText;
   } else {
     calcDisplay.textContent = evaluateOperation(calcDisplay.textContent);
   }
