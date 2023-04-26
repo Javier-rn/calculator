@@ -53,7 +53,7 @@ function evaluateOperation(str) {
   const num2 = parseInt(splitStr[2]);
   const operation = convertOperation(splitStr[1]);
   if (splitStr.length === 3) {
-    return operate(num1, num2, operation);
+    return Math.round(Math.round(operate(num1, num2, operation)));
   } else {
     return false;
   }
@@ -82,14 +82,30 @@ operationBtns.forEach((btn) => {
     const calcDisplay = document.querySelector('.calculation');
     const calcText = calcDisplay.textContent;
     const lastChar = calcText.charAt(calcText.length - 1);
-    if (!(typeof parseInt(lastChar) === 'number')) {
-      console.log('cant');
+    if (lastChar === ' ') {
+      calcDisplay.textContent = calcText;
+    } else if (!(typeof parseInt(lastChar) === 'number')) {
+      calcDisplay.textContent = calcText;
+    } else if (calcDisplay.textContent.split(' ').length === 3) {
+      calcDisplay.textContent = evaluateOperation(calcDisplay.textContent);
+    } else {
+      calcDisplay.textContent += ' ' + convertOperation(e.target.id) + ' ';
     }
-    calcDisplay.textContent += ' ' + convertOperation(e.target.id) + ' ';
   });
 });
 
 equalBtn.addEventListener('click', function (e) {
   const calcDisplay = document.querySelector('.calculation');
-  calcDisplay.textContent = evaluateOperation(calcDisplay.textContent);
+  const calcText = calcDisplay.textContent;
+  const lastChar = calcText.charAt(calcText.length - 1);
+  if (lastChar === ' ') {
+    return calcText;
+  } else {
+    calcDisplay.textContent = evaluateOperation(calcDisplay.textContent);
+  }
+});
+
+clearBtn.addEventListener('click', function () {
+  const calcDisplay = document.querySelector('.calculation');
+  calcDisplay.textContent = '0';
 });
