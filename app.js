@@ -89,8 +89,12 @@ operationBtns.forEach((btn) => {
     } else if (!(typeof parseInt(lastChar) === 'number')) {
       calcDisplay.textContent = calcText;
     } else if (calcDisplay.textContent.split(' ').length === 3) {
-      calcDisplay.textContent = evaluateOperation(calcDisplay.textContent);
-      result = true;
+      calcDisplay.textContent =
+        evaluateOperation(calcDisplay.textContent) +
+        ' ' +
+        convertOperation(e.target.id) +
+        ' ';
+      result = false;
     } else {
       calcDisplay.textContent += ' ' + convertOperation(e.target.id) + ' ';
     }
@@ -107,7 +111,7 @@ equalBtn.addEventListener('click', function (e) {
     return calcText;
   } else {
     calcDisplay.textContent = evaluateOperation(calcDisplay.textContent);
-    result = true;
+    result = false;
   }
 });
 

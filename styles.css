@@ -8,10 +8,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .calculator {
-  margin-top: 60px;
+  margin-top: 130px;
   background: rgb(88, 180, 209);
   background: radial-gradient(
     farthest-corner at 30px 30px,
