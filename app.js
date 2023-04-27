@@ -14,6 +14,7 @@ function divide(a, b) {
 const num1 = 3;
 const num2 = 5;
 const operator = 'multiply';
+let result = false;
 
 function operate(num1, num2, operator) {
   if (operator === 'add') {
@@ -69,8 +70,9 @@ numBtns.forEach((num) => {
     const calcDisplay = document.querySelector('.calculation');
     const calcText = calcDisplay.textContent;
     const lastChar = calcText.charAt(calcText.length - 1);
-    if (calcDisplay.textContent === '0') {
+    if (calcDisplay.textContent === '0' || result === true) {
       calcDisplay.textContent = e.target.id;
+      result = false;
     } else if (typeof parseInt(lastChar) === 'number') {
       calcDisplay.textContent += e.target.id;
     }
@@ -88,6 +90,7 @@ operationBtns.forEach((btn) => {
       calcDisplay.textContent = calcText;
     } else if (calcDisplay.textContent.split(' ').length === 3) {
       calcDisplay.textContent = evaluateOperation(calcDisplay.textContent);
+      result = true;
     } else {
       calcDisplay.textContent += ' ' + convertOperation(e.target.id) + ' ';
     }
@@ -104,6 +107,7 @@ equalBtn.addEventListener('click', function (e) {
     return calcText;
   } else {
     calcDisplay.textContent = evaluateOperation(calcDisplay.textContent);
+    result = true;
   }
 });
 
